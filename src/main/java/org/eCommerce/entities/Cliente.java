@@ -6,12 +6,14 @@ import java.util.List;
 public class Cliente extends _BaseEntity {
     private String nome;
     private String endereco;
+    private String email;
     private List<Venda> historicoCompras = new ArrayList<>();
 
-    public Cliente(int id, String nome, String endereco, List<Venda> historicoCompras) {
+    public Cliente(int id, String nome, String endereco, String email, List<Venda> historicoCompras) {
         super(id);
         this.nome = nome;
         this.endereco = endereco;
+        this.email = email;
         this.historicoCompras = historicoCompras;
     }
 
@@ -31,6 +33,14 @@ public class Cliente extends _BaseEntity {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public List<Venda> getHistoricoCompras() {

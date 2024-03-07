@@ -1,27 +1,62 @@
 package org.eCommerce;
 
 import com.google.gson.Gson;
+import org.eCommerce.entities.Cliente;
 import org.eCommerce.entities.ItemVenda;
 import org.eCommerce.entities.Produto;
+import org.eCommerce.entities.Venda;
+import org.eCommerce.repositories.ClienteRepository;
+import org.eCommerce.repositories.ItemVendaRepository;
+import org.eCommerce.repositories.ProdutoRepository;
+import org.eCommerce.repositories.VendaRepository;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        var produto = new Produto(1, "Notebook", "i5 10400f, gtx 1660", 4000, 30);
+        List<Cliente> clientes = new ArrayList<>();
+        List<Produto> produtos = new ArrayList<>();
+        List<ItemVenda> itensVenda = new ArrayList<>();
+        List<Venda> vendas = new ArrayList<>();
 
-        Gson gson = new Gson();
-        String json = gson.toJson(produto);
+        ClienteRepository clienteRepository = new ClienteRepository();
+        ProdutoRepository produtoRepository = new ProdutoRepository();
+        ItemVendaRepository itemVendaRepository = new ItemVendaRepository();
+        VendaRepository vendaRepository = new VendaRepository();
 
-        File arquivo = new File("produto.json");
-        try (FileWriter fw = new FileWriter(arquivo)) {
-            fw.write(json);
-            fw.flush();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        clientes.add(new Cliente(1, "João", "Rua 1", "joao@email.com", new ArrayList<>()));
+        clientes.add(new Cliente(2, "Maria", "Rua 2", "maria@email.com", new ArrayList<>()));
+
+        produtos.add(new Produto(1, "Produto 1", "Produto1", 100, 10));
+        produtos.add(new Produto(2, "Produto 2", "Produto2", 200, 20));
+        produtos.add(new Produto(3, "Produto 3", "Produto3", 300, 30));
+
+        itensVenda.add(new ItemVenda(1, 5, produtos.get(0)));
+        itensVenda.add(new ItemVenda(2, 10, produtos.get(1)));
+        itensVenda.add(new ItemVenda(3, 15, produtos.get(2)));
+        vendas.add(new Vendas(1, clientes.get(0), new ArrayList<>(
+                List.of(
+                        itensVenda.get(0),
+                        itensVenda.get(1)
+                )
+        )));
+        vendas.add(new Vendas(2, clientes.get(1), new ArrayList<>(
+                List.of(
+                        itensVenda.get(1),
+                        itensVenda.get(2)
+                )
+        )));
+        vendas.add(new Vendas(3, clientes.get(0), new ArrayList<>(
+                List.of(
+                        itensVenda.get(0),
+                        itensVenda.get(2)
+                )
+        )));
+
     }
 }
