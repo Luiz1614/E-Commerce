@@ -1,7 +1,6 @@
 package org.eCommerce.repositories;
 
 import org.eCommerce.entities._BaseEntity;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +30,7 @@ public class _BaseRepositoryImpl<T extends _BaseEntity> implements _BaseReposito
     public void delete(int id) {
         entidades.remove(id);
     }
+
 }
 
 
