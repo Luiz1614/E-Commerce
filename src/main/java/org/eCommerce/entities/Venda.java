@@ -1,5 +1,6 @@
 package org.eCommerce.entities;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,15 +8,16 @@ import java.util.List;
 public class Venda extends _BaseEntity{
     private Cliente cliente;
     private List<ItemVenda> itemVenda = new ArrayList<>();
-    private Date data;
+    private LocalDateTime data;
     private double valorTotal;
 
-    public Venda(int id, Cliente cliente, List<ItemVenda> itemVenda, Date data, double valorTotal) {
+    public Venda(int id, Cliente cliente, List<ItemVenda> itemVenda) {
         super(id);
         this.cliente = cliente;
         this.itemVenda = itemVenda;
-        this.data = data;
-        this.valorTotal = valorTotal;
+        this.data = LocalDateTime.now();
+        this.valorTotal = calcularTotal(itemVenda);
+        this.adicionarVendaCliente(this.cliente);
     }
 
     public Venda(){}
@@ -36,11 +38,11 @@ public class Venda extends _BaseEntity{
         this.itemVenda = itemVenda;
     }
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
@@ -57,6 +59,10 @@ public class Venda extends _BaseEntity{
             valorTotal += item.getProduto().getPreco() * item.getQuantidade();
         }
         return valorTotal;
+    }
+
+    public void adicionarVendaCliente(Cliente cliente){
+        cliente.getHistoricoCompras().add(this);
     }
 
     @Override

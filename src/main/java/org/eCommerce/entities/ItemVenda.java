@@ -4,7 +4,7 @@ public class ItemVenda extends _BaseEntity{
     private Produto produto;
     private int quantidade;
 
-    public ItemVenda(int id, Produto produto, int quantidade) {
+    public ItemVenda(int id, int quantidade, Produto produto) {
         super(id);
         this.produto = produto;
         this.quantidade = quantidade;

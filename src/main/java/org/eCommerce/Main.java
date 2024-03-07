@@ -39,19 +39,19 @@ public class Main {
         itensVenda.add(new ItemVenda(1, 5, produtos.get(0)));
         itensVenda.add(new ItemVenda(2, 10, produtos.get(1)));
         itensVenda.add(new ItemVenda(3, 15, produtos.get(2)));
-        vendas.add(new Vendas(1, clientes.get(0), new ArrayList<>(
+        vendas.add(new Venda(1, clientes.get(0), new ArrayList<>(
                 List.of(
                         itensVenda.get(0),
                         itensVenda.get(1)
                 )
         )));
-        vendas.add(new Vendas(2, clientes.get(1), new ArrayList<>(
+        vendas.add(new Venda(2, clientes.get(1), new ArrayList<>(
                 List.of(
                         itensVenda.get(1),
                         itensVenda.get(2)
                 )
         )));
-        vendas.add(new Vendas(3, clientes.get(0), new ArrayList<>(
+        vendas.add(new Venda(3, clientes.get(0), new ArrayList<>(
                 List.of(
                         itensVenda.get(0),
                         itensVenda.get(2)
