@@ -10,9 +10,6 @@ import org.eCommerce.repositories.ItemVendaRepository;
 import org.eCommerce.repositories.ProdutoRepository;
 import org.eCommerce.repositories.VendaRepository;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,5 +55,6 @@ public class Main {
                 )
         )));
 
+        clienteRepository.exportToJson(clientes, "./src./main./java./org./eCommerce./exportsProdutos.json");
     }
 }
