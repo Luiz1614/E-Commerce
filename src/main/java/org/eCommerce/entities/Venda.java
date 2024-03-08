@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Venda extends _BaseEntity{
-    private Cliente cliente;
+    private transient Cliente cliente;
     private List<ItemVenda> itemVenda = new ArrayList<>();
     private LocalDateTime data;
     private double valorTotal;

@@ -3,7 +3,7 @@ import org.eCommerce.entities._BaseEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _BaseRepositoryImpl<T extends _BaseEntity> implements _BaseRepository<T>{
+public abstract class _BaseRepositoryImpl<T extends _BaseEntity> implements _BaseRepository<T>{
 
     List<T> entidades  = new ArrayList<T>();
 
