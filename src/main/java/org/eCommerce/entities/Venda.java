@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Venda extends _BaseEntity{
     private transient Cliente cliente;
@@ -67,11 +68,11 @@ public class Venda extends _BaseEntity{
 
     @Override
     public String toString() {
-        return "Venda{" +
-                "cliente=" + cliente +
-                ", itemVenda=" + itemVenda +
-                ", data=" + data +
-                ", valorTotal=" + valorTotal +
-                '}';
+        return new StringJoiner(", ", Venda.class.getSimpleName() + "[", "]")
+                .add("cliente=" + cliente)
+                .add("itemVenda=" + itemVenda)
+                .add("data=" + data)
+                .add("valorTotal=" + valorTotal)
+                .toString();
     }
 }

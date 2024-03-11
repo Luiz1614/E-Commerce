@@ -2,6 +2,7 @@ package org.eCommerce.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Cliente extends _BaseEntity {
     private String nome;
@@ -57,10 +58,11 @@ public class Cliente extends _BaseEntity {
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "nome='" + nome + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", historicoCompras='" + historicoCompras + '\'' +
-                '}';
+        return new StringJoiner(", ", Cliente.class.getSimpleName() + "[", "]")
+                .add("nome='" + nome + "'")
+                .add("endereco='" + endereco + "'")
+                .add("email='" + email + "'")
+                .add("historicoCompras=" + historicoCompras)
+                .toString();
     }
 }

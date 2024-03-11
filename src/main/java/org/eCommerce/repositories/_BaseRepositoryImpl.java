@@ -22,7 +22,6 @@ public abstract class _BaseRepositoryImpl<T extends _BaseEntity> implements _Bas
 
     @Override
     public void update(T obj) {
-
     }
 
     @Override

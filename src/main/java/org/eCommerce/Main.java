@@ -54,7 +54,7 @@ public class Main {
                         itensVenda.get(2)
                 )
         )));
-
-        clienteRepository.exportToJson(clientes, "./src./main./java./org./eCommerce./exportsProdutos.json");
+        
+        clienteRepository.exportToJson(clientes, "./src./main./java./org./eCommerce./exports/Produtos.json");
     }
 }

@@ -5,4 +5,5 @@ public class ProdutoRepository extends _BaseRepositoryImpl<Produto>{
     public ProdutoRepository() {
         super(Produto.class);
     }
+
 }

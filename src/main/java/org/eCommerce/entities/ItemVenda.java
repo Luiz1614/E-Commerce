@@ -1,5 +1,7 @@
 package org.eCommerce.entities;
 
+import java.util.StringJoiner;
+
 public class ItemVenda extends _BaseEntity{
     private Produto produto;
     private int quantidade;
@@ -30,9 +32,9 @@ public class ItemVenda extends _BaseEntity{
 
     @Override
     public String toString() {
-        return "ItemVenda{" +
-                "produto=" + produto +
-                ", quantidade=" + quantidade +
-                '}';
+        return new StringJoiner(", ", ItemVenda.class.getSimpleName() + "[", "]")
+                .add("produto=" + produto)
+                .add("quantidade=" + quantidade)
+                .toString();
     }
 }
