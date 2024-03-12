@@ -55,6 +55,7 @@ public class Main {
                 )
         )));
         
-        clienteRepository.exportToJson(clientes, "./src./main./java./org./eCommerce./exports/Produtos.json");
+        clienteRepository.exportToJson(clientes, "Clientes.json");
+        System.out.println(clienteRepository.DeserializeJsonFile());
     }
 }
