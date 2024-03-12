@@ -1,7 +1,7 @@
 
 
 ## Project Title
-###E-Commerce System
+E-Commerce System
 
 ## Description
 This project is a simple e-commerce system developed in Java. It includes functionalities such as managing customers, products, and sales. The system uses JSON files to store and retrieve data.
